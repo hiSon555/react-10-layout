@@ -1,31 +1,14 @@
-import styled from "styled-components";
 import GlobalStyle from "./styles/GlobalStyle.ts";
-import { BrowserRouter, Route, Routes } from "react-router";
-import Home from "./pages/Home.tsx";
-import About from "./pages/About.tsx";
-import Header from "./components/Header.tsx";
-import Footer from "./components/Footer.tsx";
-
-const Wrap = styled.div`
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-`;
+import { RouterProvider } from "react-router";
+import AppRouter from "./router/AppRouter.tsx";
+import MainLayout from "./layouts/MainLayout.tsx";
 
 function App() {
     return (
         <>
             <GlobalStyle />
-            <BrowserRouter>
-                <Wrap>
-                   <Header />
-                    <Routes>
-                        <Route path={"/"} element={<Home />} />
-                        <Route path={"/about"} element={<About />} />
-                    </Routes>
-                    <Footer />
-                </Wrap>
-            </BrowserRouter>
+            <MainLayout />
+                <RouterProvider router={AppRouter()} />
         </>
     );
 }
