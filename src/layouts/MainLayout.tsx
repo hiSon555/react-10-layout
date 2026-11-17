@@ -12,11 +12,13 @@ const Wrap = styled.div`
 function MainLayout() {
     // Outlet
     // 이 자리에 Routes의 내용이 들어올 자리라는 걸 표현하는 기능
-    return <Wrap>
-        <Header />
-        <Outlet />
-        <Footer />
-    </Wrap>
+    return (
+        <Wrap>
+            <Header />
+            <Outlet />
+            <Footer />
+        </Wrap>
+    );
 }
 
 export default MainLayout;
