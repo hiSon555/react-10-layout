@@ -11,7 +11,7 @@ function App() {
     // 1. 화면이 다 그려진 상태에서 사용자는 button을 눌러 값을 변화시켜야 하고
     // 2. state의 값이 변화함에 따라 화면을 다시 그려줘야되기 때문
 
-    // localStorage에서 getItem을 했었을 때, 해당하는 키의 데이터가 없을 수 있음 => undefined
+    // localStorage에서 getItem을 했었을 때, 해당하는 키의 데이터가 없을 수 있음 => null
     //                  getItem을 했을 때, key가 있더라도 그에 대한 값은 무조건 string
     // const [theme, setTheme] = useState<"light" | "dark">(localStorage.getItem("theme") === "dark" ? "dark" : "light"/*localStorage에 저장되어져 있는 값을 불러와서 그걸 초기값*/);
     const [theme, setTheme] = useState<"light" | "dark">(() => {
