@@ -1,4 +1,4 @@
-import  { createBrowserRouter, type RouteObject } from "react-router";
+import { createBrowserRouter, type RouteObject } from "react-router";
 import About from "../pages/About.tsx";
 import Home from "../pages/Home.tsx";
 import MainLayout from "../layouts/MainLayout.tsx";
@@ -6,7 +6,7 @@ import Login from "../pages/auth/Login.tsx";
 import SignUp from "../pages/auth/SignUp.tsx";
 import AuthLayout from "../layouts/AuthLayout.tsx";
 
-const AppRouter = () => {
+const AppRouter = (toggleTheme: () => void) => {
     const routes: RouteObject[] = [
         {
             element: <AuthLayout />,
@@ -14,19 +14,19 @@ const AppRouter = () => {
             children: [
                 { path: "login", element: <Login /> },
                 { path: "signup", element: <SignUp /> },
-            ]
+            ],
         },
         {
-            element: <MainLayout />,
+            element: <MainLayout toggleTheme={toggleTheme} />,
             path: "/",
             children: [
                 { index: true, element: <Home /> }, // Home => "/"
                 { path: "about", element: <About /> }, // About => "/about"
-            ]
+            ],
         },
     ];
 
     return createBrowserRouter(routes);
-}
+};
 
 export default AppRouter;
