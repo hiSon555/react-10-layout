@@ -5,12 +5,9 @@ import MainLayout from "../layouts/MainLayout.tsx";
 import Login from "../pages/auth/Login.tsx";
 import SignUp from "../pages/auth/SignUp.tsx";
 import AuthLayout from "../layouts/AuthLayout.tsx";
-import { type Dispatch, type SetStateAction} from "react";
 
+// 지도
 const AppRouter = (
-    toggleTheme: () => void,
-    theme: "light" | "dark",
-    setTheme: Dispatch<SetStateAction<"light" | "dark">>,
 ) => {
     const routes: RouteObject[] = [
         {
@@ -22,7 +19,7 @@ const AppRouter = (
             ],
         },
         {
-            element: <MainLayout toggleTheme={toggleTheme} theme={theme} setTheme={setTheme()}/>,
+            element: <MainLayout/>,
             path: "/",
             children: [
                 { index: true, element: <Home /> }, // Home => "/"
