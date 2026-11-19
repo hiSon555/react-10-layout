@@ -41,7 +41,7 @@ function App() {
     return (
         <ThemeProvider theme={theme === "light" ? LightTheme : DarkTheme}>
             <GlobalStyle />
-            <RouterProvider router={AppRouter(toggleTheme)} />
+            <RouterProvider router={AppRouter(toggleTheme, theme, setTheme)} />
         </ThemeProvider>
     );
 }
